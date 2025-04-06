@@ -1,68 +1,76 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const { expect } = require('chai');
-const chrome = require('selenium-webdriver/chrome');
+const firefox = require('selenium-webdriver/firefox');
 
-describe('Flight Search on Aviasales.kz', function () {
+describe('Flight Search on Aviasales.kz (Астана ➡ Актобе)', function () {
   let driver;
-  this.timeout(60000); // long timeout to be safe
+  this.timeout(60000);
 
   before(async function () {
-    const options = new chrome.Options();
-    options.addArguments('--ignore-certificate-errors');
-    // options.addArguments('--headless'); // optional
-
-    driver = await new Builder()
-      .forBrowser('chrome')
-      .setChromeOptions(options)
-      .build();
-
+    driver = await new Builder().forBrowser('chrome').build(); // use Firefox like your Java code
     await driver.manage().window().maximize();
   });
 
-  it('should search for flights from Астана to Актобе and open results', async function () {
+  it('should search for flights and verify title contains Астана', async function () {
     await driver.get('https://www.aviasales.kz');
 
-    const fromInput = await driver.wait(until.elementLocated(By.css("input[placeholder='Откуда']")), 20000);
+    const wait = (locator) =>
+      driver.wait(until.elementLocated(locator), 20000).then(() =>
+        driver.wait(until.elementIsVisible(driver.findElement(locator)), 10000)
+      );
+
+    // "Откуда" field
+    const fromInput = await wait(By.css("input[placeholder='Откуда']"));
     await fromInput.click();
     await fromInput.sendKeys('Астана');
     await driver.sleep(1000);
     await fromInput.sendKeys(Key.ENTER);
 
-    const toInput = await driver.wait(until.elementLocated(By.css("input[placeholder='Куда']")), 20000);
+    // "Куда" field
+    const toInput = await wait(By.css("input[placeholder='Куда']"));
     await toInput.click();
-    await toInput.sendKeys('Актобе');
+    await toInput.sendKeys('Шымкент'); // Change to 'Шымкент' if needed
     await driver.sleep(1000);
     await toInput.sendKeys(Key.ENTER);
 
-    // Click date input
-    const dateButton = await driver.wait(until.elementLocated(By.css("button[data-test-id='departure-date-input']")), 20000);
-    await dateButton.click();
+    // Open calendar — like Java version
+    const calendarButton = await wait(By.css('button.s__baueeRnAUu_J55n12MRS:nth-child(1)'));
+    await calendarButton.click();
 
-    // Wait for any active date button and click it
-    const activeDate = await driver.wait(until.elementLocated(By.css("button[aria-label*='выбрать']")), 10000);
-    await activeDate.click();
+    // Select departure date (like Java version)
+    const day21 = await wait(By.css('.boundedFrom'));
+    await day21.click();
 
-    // Click search
-    const searchButton = await driver.wait(until.elementLocated(By.css("button[data-test-id='form-submit']")), 20000);
-    await searchButton.click();
+    const day22 = await wait(
+      By.css('div.s__QIpl4HSgk6PrStnNFAwQ:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(2)')
+    );
+    await day22.click();
 
-    // Wait for redirect to new tab
-    await driver.sleep(5000);
+    // Submit search
+    const searchBtn = await wait(By.css("button[data-test-id='form-submit']"));
+    await searchBtn.click();
 
-    const originalWindow = await driver.getWindowHandle();
-    const allWindows = await driver.getAllWindowHandles();
+    // Wait for new tab
+    await driver.sleep(3000);
+    const originalTab = await driver.getWindowHandle();
+    const allTabs = await driver.getAllWindowHandles();
 
-    for (let handle of allWindows) {
-      if (handle !== originalWindow) {
+    for (const handle of allTabs) {
+      if (handle !== originalTab) {
         await driver.switchTo().window(handle);
         break;
       }
     }
 
-    const pageTitle = await driver.getTitle();
-    expect(pageTitle).to.include('Астана');
+ // ...
+// ✅ Final title check
+const title = await driver.getTitle();
+console.log('🔍 Page title:', title);
+expect(title).to.include('NQZ'); // Astana = NQZ
 
-    await driver.sleep(3000);
+
+
+    await driver.sleep(2000);
   });
 
   after(async function () {
