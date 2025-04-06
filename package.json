@@ -1,0 +1,13 @@
+{
+  "name": "nodedatabase-tests",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.1.0",
+    "selenium-webdriver": "^4.31.0"
+  }
+}
