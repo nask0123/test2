@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const { expect } = require('chai');
 const firefox = require('selenium-webdriver/firefox');
 
-describe('Flight Search on Aviasales.kz (Астана ➡ Актобе)', function () {
+describe('Flight Search on Aviasales.kz (Астана ➡ Шымкент)', function () {
   let driver;
   this.timeout(60000);
 

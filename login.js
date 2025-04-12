@@ -19,8 +19,8 @@ describe('Login & Logout Tests for nodedatabase.onrender.com', function () {
     const username = await driver.findElement(By.id('name'));
     const password = await driver.findElement(By.id('password'));
 
-    await username.sendKeys('alikhan12');
-    await password.sendKeys('Alikhan12!');
+    await username.sendKeys('abubakir12');
+    await password.sendKeys('abubakir12!');
     await password.submit(); // submits the form
 
     await driver.wait(until.titleIs('Dashboard'), 5000);
