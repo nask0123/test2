@@ -1,0 +1,39 @@
+[2025-04-27T22:10:14.106] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:10:14.109] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:10:24.911] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:10:25.305] [INFO] assignment5 - Form submitted
+[2025-04-27T22:10:25.336] [INFO] assignment5 - Form output verified
+[2025-04-27T22:10:25.337] [INFO] assignment5 - Test PASSED: should open demoqa and fill the form
+[2025-04-27T22:10:25.399] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:11:55.002] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:11:55.005] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:12:06.905] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:12:08.331] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:12:08.682] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:18:54.796] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:18:54.799] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:18:59.391] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:19:00.762] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:19:01.048] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:26:19.678] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:26:19.682] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:26:24.393] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:26:25.898] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:26:26.322] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:30:55.026] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:30:55.030] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:31:00.890] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:31:02.225] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:31:02.544] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:34:02.088] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:34:02.092] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:34:12.419] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:34:12.820] [INFO] assignment5 - Form submitted
+[2025-04-27T22:34:12.854] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:34:13.146] [INFO] assignment5 - WebDriver Closed
+[2025-04-27T22:40:38.023] [INFO] assignment5 - WebDriver Initialized
+[2025-04-27T22:40:38.027] [INFO] assignment5 - Starting test: should open demoqa and fill the form
+[2025-04-27T22:40:42.174] [INFO] assignment5 - Navigated to demoqa
+[2025-04-27T22:40:43.519] [ERROR] assignment5 - Test FAILED: should open demoqa and fill the form
+[2025-04-27T22:40:43.755] [INFO] assignment5 - Screenshot saved: C:\Users\abume\.vscode\codes\test\test2\screenshots\should_open_demoqa_and_fill_the_form.png
+[2025-04-27T22:40:43.901] [INFO] assignment5 - WebDriver Closed
